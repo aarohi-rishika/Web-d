@@ -36,6 +36,10 @@ const outOfBounds = (position) => {
     return position.x < 1 || position.x > GRID_SIZE || position.y < 1 || position.y > GRID_SIZE
 }
 
+const snakeOutOfBounds = () => {
+    return outOfBounds(snakeBody[0]);
+}
+
 const snakeIntersectSelf = () => {
     for (let i = 1; i < snakeBody.length; i++) {
         if (equalPositions(snakeBody[0], snakeBody[i])) {
