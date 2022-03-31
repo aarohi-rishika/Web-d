@@ -12,8 +12,9 @@ const updateSnake = () => {
 
     // add a new head segment
     const newHead = { ...snakeBody[0] };
-    newHead.x += 0;
-    newHead.y += 1;
+    const snakeDirection = getInputDirection();
+    newHead.x += snakeDirection.x;
+    newHead.y += snakeDirection.y;
     
     snakeBody.unshift(newHead);
 };
